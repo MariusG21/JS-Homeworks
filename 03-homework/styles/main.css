@@ -1,0 +1,66 @@
+.main {
+  width: 100%;
+  display: flex;
+  padding: 3rem;
+  gap: 3rem;
+}
+.main__voting-container {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  background-color: #0a2643e7;
+  padding: 3rem;
+  border-radius: 1rem;
+  gap: 0.4rem;
+}
+.main__voting-container__voting-option {
+  width: 100%;
+  height: 4rem;
+  background-color: #144274;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  border-radius: 0.4rem;
+  color: var(--text-primary);
+  font: 700 1.6rem arial, sans-serif;
+  text-transform: capitalize;
+  gap: 0.8rem;
+}
+.illustrative-pic {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background-color: lightblue;
+  border: 0.2 solid black;
+}
+.separator-line {
+  width: 0.2rem;
+  height: 2rem;
+  background-color: #a8a8a8;
+}
+.vote-counter {
+  color: #b1ff79;
+}
+.vote-btn {
+  width: 6rem;
+  height: 3rem;
+  background: red;
+  font: 400 1.6rem arial, sans-serif;
+  color: rgb(53, 41, 177);
+  margin-left: auto;
+  border: 0.1rem solid #fecd35;
+  color: #ffbf00;
+  background-color: #ffffff;
+  border-radius: 0.4rem;
+}
+.placeholder {
+  flex-grow: 1;
+  background-color: #0a2643e7;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.is-processing {
+  opacity: 0.3;
+}
