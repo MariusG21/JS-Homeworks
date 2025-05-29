@@ -1,6 +1,13 @@
 import { fetchVotes, superpowers } from "./data.js";
 
-function renderVotingOptions() {
+const dasd = async () => {
+  const superpowers = await fetchVotes();
+  renderVotingOptions(superpowers);
+};
+
+dasd();
+
+function renderVotingOptions(superpowers) {
   let html = "";
 
   superpowers.forEach((superpower) => {
@@ -9,7 +16,7 @@ function renderVotingOptions() {
         <div class="illustrative-pic"></div>
         <div class="superpower-name">${superpower.name}</div>
         <div class="separator-line"></div>
-        <div class="vote-counter">Votes: <span class="counter">0</span></div>
+        <div class="vote-counter">Votes: <span class="counter">${superpower.votes}</span></div>
         <button class="vote-btn">Vote</button>
       </div>
     `;
@@ -18,4 +25,4 @@ function renderVotingOptions() {
   document.querySelector(".main__voting-container").innerHTML = html;
 }
 
-renderVotingOptions();
+renderVotingOptions(superpowers);
