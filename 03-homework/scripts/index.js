@@ -1,4 +1,4 @@
-import { superpowers } from "./data.js";
+import { fetchVotes, superpowers } from "./data.js";
 
 function renderVotingOptions() {
   let html = "";
