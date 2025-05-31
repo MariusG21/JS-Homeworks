@@ -26,12 +26,17 @@
   text-transform: capitalize;
   gap: 0.8rem;
 }
-.illustrative-pic {
+.image-container {
   width: 3rem;
   height: 3rem;
   border-radius: 0.5rem;
-  background-color: lightblue;
+  overflow: hidden;
   border: 0.2 solid black;
+}
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .separator-line {
   width: 0.2rem;
@@ -39,19 +44,35 @@
   background-color: #a8a8a8;
 }
 .vote-counter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   color: #b1ff79;
 }
 .vote-btn {
   width: 6rem;
   height: 3rem;
-  background: red;
   font: 400 1.6rem arial, sans-serif;
-  color: rgb(53, 41, 177);
   margin-left: auto;
   border: 0.1rem solid #fecd35;
   color: #ffbf00;
-  background-color: #ffffff;
+  background-color: rgb(251, 254, 255);
   border-radius: 0.4rem;
+  transition: box-shadow 150ms;
+}
+.vote-btn.isDisabled {
+  background: linear-gradient(to bottom, rgb(148, 148, 148), rgb(57, 57, 57));
+  border-color: rgb(16, 16, 16);
+  color: #144274;
+  box-shadow: none;
+  cursor: default;
+  pointer-events: none;
+}
+.vote-btn:hover {
+  box-shadow: inset 0 0 0.5rem rgb(0, 0, 0);
+}
+.vote-btn.isDisabled:hover {
+  box-shadow: none;
 }
 .placeholder {
   flex-grow: 1;
@@ -63,4 +84,10 @@
 }
 .is-processing {
   opacity: 0.3;
+}
+.loading-spinner {
+  width: 30px;
+  height: 30px;
+  margin-top: 0.5rem;
+  margin-left: -0.8rem;
 }

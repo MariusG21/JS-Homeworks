@@ -1,27 +1,33 @@
 export const superpowers = [
   {
-    id: "11",
+    id: "id-11",
     name: "invisibility",
+    image: "assets/invisibility.jpeg",
   },
   {
-    id: "22",
+    id: "id-22",
     name: "super strength",
+    image: "assets/super-strength.jpeg",
   },
   {
-    id: "33",
+    id: "id-33",
     name: "reading minds",
+    image: "assets/reading-minds.jpeg",
   },
   {
-    id: "44",
+    id: "id-44",
     name: "time travel",
+    image: "assets/time-travel.jpeg",
   },
   {
-    id: "55",
+    id: "id-55",
     name: "teleportation",
+    image: "assets/teleportation.jpeg",
   },
   {
-    id: "66",
+    id: "id-66",
     name: "immortality",
+    image: "assets/immortality.jpeg",
   },
 ];
 
@@ -29,6 +35,7 @@ const fetchSuperpowerVotes = async (id) => {
   const res = await fetch(`https://api.api-ninjas.com/v1/counter?id=${id}`, {
     headers: {
       "x-api-key": "lapX9tiSjA6BpVn/4v7Mow==GNJcGloReV0TXiRk",
+      Accept: "application/json",
     },
   });
   const data = await res.json();
