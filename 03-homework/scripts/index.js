@@ -1,4 +1,4 @@
-import { fetchVotes, superpowers } from "./data.js";
+import { fetchVotes, superpowers, handleClickEvent } from "./data.js";
 
 const init = async () => {
   renderVotingOptions(superpowers);
@@ -45,22 +45,4 @@ function renderVotingOptions(superpowers, isLoading = true) {
       handleClickEvent(btn, id);
     });
   });
-
-  const handleClickEvent = async (btn, id) => {
-    btn.classList.toggle("isDisabled");
-
-    const counter = document.querySelector(`.counter-${id}`);
-    const res = await fetch(
-      `https://api.api-ninjas.com/v1/counter?id=${id}&hit=true`,
-      {
-        headers: {
-          "x-api-key": "lapX9tiSjA6BpVn/4v7Mow==GNJcGloReV0TXiRk",
-        },
-      }
-    );
-    const data = await res.json();
-    const newVotes = data.value;
-    counter.textContent = newVotes;
-    btn.classList.toggle("isDisabled");
-  };
 }

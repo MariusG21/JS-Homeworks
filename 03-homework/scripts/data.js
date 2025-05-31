@@ -1,31 +1,31 @@
 export const superpowers = [
   {
-    id: "id-11",
+    id: "randomId1",
     name: "invisibility",
     image: "assets/invisibility.jpeg",
   },
   {
-    id: "id-22",
+    id: "randomId2",
     name: "super strength",
     image: "assets/super-strength.jpeg",
   },
   {
-    id: "id-33",
+    id: "randomId3",
     name: "reading minds",
     image: "assets/reading-minds.jpeg",
   },
   {
-    id: "id-44",
+    id: "randomId4",
     name: "time travel",
     image: "assets/time-travel.jpeg",
   },
   {
-    id: "id-55",
+    id: "randomId5",
     name: "teleportation",
     image: "assets/teleportation.jpeg",
   },
   {
-    id: "id-66",
+    id: "randomId6",
     name: "immortality",
     image: "assets/immortality.jpeg",
   },
@@ -51,4 +51,23 @@ export const fetchVotes = async () => {
   );
 
   return updatedSuperpowers;
+};
+
+export const handleClickEvent = async (btn, id) => {
+  btn.classList.toggle("isDisabled");
+  const counter = document.querySelector(`.counter-${id}`);
+  counter.innerHTML = `<img class="loading-spinner" src="assets/loading-spinner.gif"/>`;
+
+  const res = await fetch(
+    `https://api.api-ninjas.com/v1/counter?id=${id}&hit=true`,
+    {
+      headers: {
+        "x-api-key": "lapX9tiSjA6BpVn/4v7Mow==GNJcGloReV0TXiRk",
+      },
+    }
+  );
+  const data = await res.json();
+  const newVotes = data.value;
+  counter.textContent = newVotes;
+  btn.classList.toggle("isDisabled");
 };

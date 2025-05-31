@@ -3,9 +3,10 @@
   display: flex;
   padding: 3rem;
   gap: 3rem;
+  min-width: 47rem;
 }
 .main__voting-container {
-  flex-grow: 2;
+  width: 100%;
   display: flex;
   flex-direction: column;
   background-color: #0a2643e7;
@@ -73,14 +74,6 @@
 }
 .vote-btn.isDisabled:hover {
   box-shadow: none;
-}
-.placeholder {
-  flex-grow: 1;
-  background-color: #0a2643e7;
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .is-processing {
   opacity: 0.3;
